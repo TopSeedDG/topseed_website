@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --black-100: #3F3F3F;
+    --grey-400: #9C9C9C;
+    --grey-200: #CFCFCF;
+    --steelblue: #525174;
+    --heather-100: #9F91B6;
+    --heather-500: #885A98;
+    --rose-gold: linear-gradient(to right, #FF9090, #FF5793);
+    --shadow-300: 0 2px 20px rgba(0, 0, 0, 0.15); 
+    --error: #FF5E84; 
+    --peach-400: #FF7792;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: min(calc(11px + 0.6vw), 16px);
+    font-family: 'Nunito', sans-serif;
+}
+body {
+    color: var(--black-100);
+    overflow-x: hidden;
+}
+h1 {
+    font-size: 3em;
+    font-weight: 800;
+    color: var(--steelblue);
+    line-height: 1.1;
+    /* width: min(80%, 400px); */
+}
+h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+section {
+    width: 100vw;
+    display: flex;
+    place-content: center;
+    padding: 5em 5vw 0 5vw;
+    /* overflow */
+}
+.hero {
+    background-image: linear-gradient(to right, #BCCAE7, #FFD7EF);
+}
+section > .wrapper {
+    width: min(30em, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.hero > .wrapper > .TS-logo {
+    width: 4em;
+    height: 4em;
+    margin-bottom: 1em;
+}
+.hero h6 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--heather-100);
+    margin: 0.8em 0 1.5em 0;
+}
+
+.email-prompt {
+    width: 80%;
+}
+.email-prompt .message {
+    margin-bottom: 0.8em;
+    color: var(--heather-500);
+}
+.fade-out {
+    /* opacity: 0; */
+    animation: fade-out 1.5s ease-out 2s forwards;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+input {
+    /* font: 1em; */
+    font: inherit;
+    padding: 1.2em 1.5em;
+    border-radius: 12px;
+    border-style: none;
+    appearance: none;
+    transition: 0.6s;
+    /* outline: none; */
+}
+input::placeholder {
+    color: var(--grey-400);
+}
+
+.submit-btn {
+    background-image: var(--rose-gold);
+    color: white;
+    cursor: pointer;
+}
+.submit-btn:hover, .email-prompt.error .submit-btn {
+    box-shadow: var(--shadow-300)
+} 
+
+input:disabled {
+    opacity: 0.6;
+
+}
+.submit-btn:disabled {
+    background-image: none;
+    background-color: var(--peach-400);
+    box-shadow: none;
+}
+input[type="text"]:disabled {
+    background-color: white;
+    color: inherit;
+}
+input[type="text"]:focus {
+    outline-color: var(--black-100);
+    box-shadow: var(--shadow-300);
+}
+
+.email-prompt .error-message {
+    align-self: flex-start;
+    color: var(--error);
+    font-size: 0.9em;
+    /* display: none; */
+}
+
+.email-prompt.error input[type="text"] {
+    outline-color: var(--error);
+}
+
+
+.hero-bg-img {
+    width: calc(110% + 20vw);
+    /* transform: translate(0, 10%); */
+    object-fit: fill;
+    position: relative;
+    bottom: -5%;
+}
+.intro > .wrapper {
+    width: min(42em, 100%);
+}
+
+.intro .wrapper > p {
+    color: var(--grey-400);
+    margin: 1em 0 3em 0;
+}
+
+.association-logos {
+    display: flex;
+    gap: 2em;
+    /* width: 100%; */
+}
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.logo-wrapper:hover {
+    opacity: 1;
+}
+.logo-wrapper img {
+    height: 6em;
+}
+.logo-wrapper p {
+    font-weight: 700;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background: var(--grey-200);
+    border-radius: 1em;
+    margin: 4em 0;
+}
+
+.intro .TS-logo {
+    height: 8em;
+}
