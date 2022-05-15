@@ -113,7 +113,8 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
             </form>
 
         </div>
-    )
-}
 
-export default EmailPrompt
+    );
+};
+
+export default EmailPrompt;
