@@ -3,14 +3,10 @@ import React, {useEffect, useRef, useState} from 'react'
 const defaultMessge = '⚡️Launching soon'
 const errorString = 'This email address doesn\'t seem valid'
 const successMessage = 'Awesome, thanks for tuning in!' 
-const emailExistedMessage = 'This email address is already in our system'
-
-let emailExisted = false
+const duplicateMessage = 'This email address is already in our system'
 
 
-
-
-const EmailPrompt = () => {
+const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
 
     const [message, setMessage] = useState(defaultMessge)
     const [submitFailed, setFailure] = useState(false)
@@ -21,21 +17,11 @@ const EmailPrompt = () => {
     const submitBtn = useRef(null)
 
     
-    const sendData = (email) => {
-        const url = "https://gmail.us13.list-manage.com/subscribe/post?u=0d21a3ba7be6d4a85f6f25b07&amp;id=3958124cb6"
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email })
-        };
-        fetch(url, requestOptions)
-            .then(response => console.log('Submitted successfully'))
-            .catch(error => console.log('Form submit error', error))
-    }
-
+    let email
 
     const handleError = () => {
         setFailure(true)
+		console.log(status, MCMessage)
         // setSuccess(false)
         setMessage(defaultMessge)
         emailPrompt.current.classList.add('error')
@@ -43,9 +29,10 @@ const EmailPrompt = () => {
     }
 
 
-    const handleSuccess = () => {
+    const handleSuccess = () => {	
         setFailure(false)
         setSuccess(true)
+		// console.log(status, MCMessage)
         emailMessage.current.classList.add('fade-out')
         emailPrompt.current.classList.remove('error')
         emailInput.current.value = null
@@ -54,7 +41,7 @@ const EmailPrompt = () => {
         emailMessage.current.onanimationend = () => {
             setMessage(defaultMessge)
             setSuccess(false)
-            
+
             setTimeout(() => {
                 emailMessage.current.classList.remove('fade-out')
             }, 0)
@@ -67,36 +54,38 @@ const EmailPrompt = () => {
     const submitHandler = (e) => {
 
         e.preventDefault()
-        console.log(e.target)
+        console.log(emailInput.current.value)
 
-        const emailAddress = emailInput.current.value
+		onValidated({ EMAIL: emailInput.current.value })
+
+		let duplicate = MCMessage === null? false : MCMessage.includes('many')
 
         switch (true) {
-            case !emailAddress.includes('@'):
+			case status === 'error' && duplicate:
+                setMessage(duplicateMessage)
+                handleSuccess()
+                break
+            case status === 'error':
                 handleError()
                 break;
-            case emailAddress.length < 3:
-                handleError()
-                break
-            case emailExisted:
-                setMessage(emailExistedMessage)
-                handleSuccess()
-                break
             default: 
                 setMessage(successMessage)
-                // sendData(emailAddress)
-                e.target.submit()
-                
                 handleSuccess()
-
-
         }
+
+        status = null
+        MCMessage = null
+
+
+
+
     }
 
-    const handleInputFocus = () => {
-        // submitBtn.current.disabled = false
-        // setSuccess(false)
+    const handleInputChange = (e) => {
+        // email = e.target.value
+        // console.log(emailInput.current.value)
     }
+
 
 
 
@@ -107,20 +96,16 @@ const EmailPrompt = () => {
 
             <form
                 onSubmit={(e) => submitHandler(e)}
-                action="https://gmail.us13.list-manage.com/subscribe/post?u=0d21a3ba7be6d4a85f6f25b07&amp;id=3958124cb6"
-                name='mc-embedded-subscribe-form'
-                target='_blank'
                 className='email-form'
-                method='post'
-                noValidate
             >
                 <input 
                     disabled={submitSuccess? true : false} 
-                    ref={emailInput} onFocus={handleInputFocus} 
+                    ref={emailInput} 
                     type="text" 
-                    name="EMAIL" 
-                    id="mce-EMAIL" 
-                    placeholder='Enter your email' />
+					autoComplete='email'
+                    placeholder='Enter your email'
+                    onChange={(e) => {handleInputChange(e)}}    
+                />
 
                 {submitFailed? <p className='error-message'>{errorString}</p> : null}
                 
@@ -128,8 +113,6 @@ const EmailPrompt = () => {
                     disabled={submitSuccess? true : false} 
                     ref={submitBtn} className='submit-btn' 
                     type="submit" 
-                    name='subscribe'
-                    id='mc-embedded-subscribe'
                     value={submitSuccess? "Submitted" : "Keep me posted"}/>
 
                 {/* this prevents bot signup? from mailchimp */}
