@@ -67,6 +67,7 @@ const EmailPrompt = () => {
     const submitHandler = (e) => {
 
         e.preventDefault()
+        console.log(e.target)
 
         const emailAddress = emailInput.current.value
 
@@ -83,7 +84,9 @@ const EmailPrompt = () => {
                 break
             default: 
                 setMessage(successMessage)
-                sendData(emailAddress)
+                // sendData(emailAddress)
+                e.target.submit()
+                
                 handleSuccess()
 
 
@@ -102,7 +105,15 @@ const EmailPrompt = () => {
 
             <p ref={emailMessage} className='message'>{message}</p>
 
-            <form onSubmit={(e) => submitHandler(e)} action="" className='email-form'>
+            <form
+                onSubmit={(e) => submitHandler(e)}
+                action="https://gmail.us13.list-manage.com/subscribe/post?u=0d21a3ba7be6d4a85f6f25b07&amp;id=3958124cb6"
+                name='mc-embedded-subscribe-form'
+                target='_blank'
+                className='email-form'
+                method='post'
+                noValidate
+            >
                 <input 
                     disabled={submitSuccess? true : false} 
                     ref={emailInput} onFocus={handleInputFocus} 
@@ -113,10 +124,16 @@ const EmailPrompt = () => {
 
                 {submitFailed? <p className='error-message'>{errorString}</p> : null}
                 
-                <input disabled={submitSuccess? true : false} ref={submitBtn} className='submit-btn' type="submit" value={submitSuccess? "Submitted" : "Keep me posted"}/>
+                <input
+                    disabled={submitSuccess? true : false} 
+                    ref={submitBtn} className='submit-btn' 
+                    type="submit" 
+                    name='subscribe'
+                    id='mc-embedded-subscribe'
+                    value={submitSuccess? "Submitted" : "Keep me posted"}/>
 
                 {/* this prevents bot signup? from mailchimp */}
-                <input style={{ display : 'none' }} type="text" name="b_0d21a3ba7be6d4a85f6f25b07_3958124cb6" tabIndex="-1" />
+                {/* <input style={{ display : 'none' }} type="text" name="b_0d21a3ba7be6d4a85f6f25b07_3958124cb6" tabIndex="-1" /> */}
             </form>
 
         </div>
