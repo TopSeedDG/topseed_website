@@ -182,6 +182,8 @@ input[type="text"]:focus {
 }
 .logo-wrapper img {
     height: 6em;
+    width: 6em;
+    object-fit: contain;
 }
 .logo-wrapper p {
     font-weight: 700;

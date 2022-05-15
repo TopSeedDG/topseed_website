@@ -3,6 +3,7 @@ import './style.css'
 
 
 import EmailPrompt from './components/EmailPrompt'
+import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 
 import BGImg from './assets/bg-img.svg'
@@ -10,6 +11,7 @@ import TSLogoDreamy from './assets/dreamy-logo.svg'
 import TSLogoRoseGold from './assets/rosegold-logo.svg' 
 import ticaLogo from './assets/tica-logo.png'
 import CFALogo from './assets/cfa-logo.png'
+import { MCSubscribe } from './components/MCSubscribe'
 
 
 
@@ -25,7 +27,8 @@ const TemporaryHome = () => {
                     <h6>From Registered Breeders You Can Trust</h6>
                 {/* </div> */}
 
-                <EmailPrompt></EmailPrompt>
+                {/* <EmailPrompt></EmailPrompt> */}
+                <MCSubscribe></MCSubscribe>
 
                 <img className='hero-bg-img' src={BGImg} alt="" />
             </div>
