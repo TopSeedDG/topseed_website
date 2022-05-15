@@ -17,7 +17,6 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
     const submitBtn = useRef(null)
 
     
-    let email
 
     const handleError = () => {
         setFailure(true)
@@ -32,11 +31,10 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
     const handleSuccess = () => {	
         setFailure(false)
         setSuccess(true)
-		// console.log(status, MCMessage)
+
         emailMessage.current.classList.add('fade-out')
         emailPrompt.current.classList.remove('error')
         emailInput.current.value = null
-        // submitBtn.current.disabled = true
 
         emailMessage.current.onanimationend = () => {
             setMessage(defaultMessge)
@@ -81,10 +79,6 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
 
     }
 
-    const handleInputChange = (e) => {
-        // email = e.target.value
-        // console.log(emailInput.current.value)
-    }
 
 
 
@@ -103,8 +97,7 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
                     ref={emailInput} 
                     type="text" 
 					autoComplete='email'
-                    placeholder='Enter your email'
-                    onChange={(e) => {handleInputChange(e)}}    
+                    placeholder='Enter your email'  
                 />
 
                 {submitFailed? <p className='error-message'>{errorString}</p> : null}
