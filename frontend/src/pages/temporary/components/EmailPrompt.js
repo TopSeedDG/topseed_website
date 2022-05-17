@@ -5,45 +5,67 @@ const errorString = 'This email address doesn\'t seem valid'
 const successMessage = 'Awesome, thanks for tuning in!' 
 const duplicateMessage = 'This email address is already in our system'
 
+const defaultBtnText = 'Keep me posted'
+
 
 const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
 
     const [message, setMessage] = useState(defaultMessge)
     const [submitFailed, setFailure] = useState(false)
     const [submitSuccess, setSuccess] = useState(null)
+    const [buttonText, setButtonText] = useState(defaultBtnText)
+    const [errorMessage, setErrorMessage] = useState(errorString)
     const emailPrompt = useRef(null)
     const emailInput = useRef(null)
     const emailMessage = useRef(null)
     const submitBtn = useRef(null)
+    const statusRef = useRef(null)
 
     
 
+    
+
+
+
     const handleError = () => {
+        // console.log('handle error')	
         setFailure(true)
-		console.log(status, MCMessage)
-        // setSuccess(false)
+
+        setButtonText(defaultBtnText)
         setMessage(defaultMessge)
         emailPrompt.current.classList.add('error')
         emailInput.current.focus()
     }
 
 
-    const handleSuccess = () => {	
+    const handleSuccess = () => {
+        // console.log('handle success')	
         setFailure(false)
         setSuccess(true)
+        setButtonText('Submitted')
 
         emailMessage.current.classList.add('fade-out')
         emailPrompt.current.classList.remove('error')
-        emailInput.current.value = null
+        emailInput.current.value = ''
 
         emailMessage.current.onanimationend = () => {
             setMessage(defaultMessge)
             setSuccess(false)
+            setButtonText(defaultBtnText)
 
             setTimeout(() => {
                 emailMessage.current.classList.remove('fade-out')
             }, 0)
         }
+    }
+
+    const handleTimeOut = () => {
+        // console.log('timeout', statusRef.current)
+        if (statusRef.current === 'sending') {
+            handleError()
+            setErrorMessage('Sorry, something went wrong. Please try again')
+        }
+
     }
 
 
@@ -52,32 +74,51 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
     const submitHandler = (e) => {
 
         e.preventDefault()
-        console.log(emailInput.current.value)
+        // console.log(emailInput.current.value)
 
 		onValidated({ EMAIL: emailInput.current.value })
 
-		let duplicate = MCMessage === null? false : MCMessage.includes('many')
-
-        switch (true) {
-			case status === 'error' && duplicate:
-                setMessage(duplicateMessage)
-                handleSuccess()
-                break
-            case status === 'error':
-                handleError()
-                break;
-            default: 
-                setMessage(successMessage)
-                handleSuccess()
-        }
-
-        status = null
-        MCMessage = null
-
-
-
 
     }
+
+    useEffect(() => {
+
+        if (status === null) {
+            return
+        }
+
+        console.log('useEffect', status, MCMessage)
+
+        statusRef.current = status
+
+        switch (true) {
+            case status === 'error' && MCMessage.includes('many'):
+                setMessage(duplicateMessage)
+                handleSuccess()
+                // console.log('duplicate')
+                break
+            case status === 'error':
+                setErrorMessage(errorString)
+                handleError()
+                break;
+
+            case status === 'sucess':
+                setMessage(successMessage)
+                handleSuccess()
+                break
+            case status === 'sending':
+                setButtonText('sending...')
+                setTimeout(() => {
+                    handleTimeOut()
+                }, 2000);
+                break
+        }
+        
+        
+
+
+
+    }, [status, MCMessage])
 
 
 
@@ -100,13 +141,13 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
                     placeholder='Enter your email'  
                 />
 
-                {submitFailed? <p className='error-message'>{errorString}</p> : null}
+                {submitFailed? <p className='error-message'>{errorMessage}</p> : null}
                 
                 <input
                     disabled={submitSuccess? true : false} 
                     ref={submitBtn} className='submit-btn' 
                     type="submit" 
-                    value={submitSuccess? "Submitted" : "Keep me posted"}/>
+                    value={buttonText}/>
 
                 {/* this prevents bot signup? from mailchimp */}
                 {/* <input style={{ display : 'none' }} type="text" name="b_0d21a3ba7be6d4a85f6f25b07_3958124cb6" tabIndex="-1" /> */}

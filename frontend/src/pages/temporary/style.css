@@ -19,6 +19,14 @@
     box-sizing: border-box;
 }
 
+a {
+    color: initial;
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+
 html {
     font-size: min(calc(11px + 0.6vw), 16px);
     font-family: 'Nunito', sans-serif;
@@ -177,6 +185,7 @@ input[type="text"]:focus {
     cursor: pointer;
     transition: 0.6s;
 }
+
 .logo-wrapper:hover {
     opacity: 1;
 }

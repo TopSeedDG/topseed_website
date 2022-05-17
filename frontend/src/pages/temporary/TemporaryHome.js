@@ -48,14 +48,14 @@ const TemporaryHome = () => {
 
                 <div className="association-logos">
 
-                    <div className="logo-wrapper">
+                    <a href='https://cfa.org/' className="logo-wrapper" target='_blank'>
                         <img src={CFALogo} alt="" />
                         <p>CFA</p>
-                    </div>
-                    <div className="logo-wrapper">
+                    </a>
+                    <a href='https://tica.org/' className="logo-wrapper" target='_blank'>
                         <img src={ticaLogo} alt="" />
                         <p>TICA</p>
-                    </div>
+                    </a>
 
                 </div>
 
