@@ -78,7 +78,7 @@ section > .wrapper {
 }
 
 .email-prompt {
-    width: max(80%, calc(100% - 3vw));
+    width: max(80%, calc(100% - 6vw));
 }
 .email-prompt .message {
     margin-bottom: 0.8em;
