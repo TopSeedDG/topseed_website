@@ -1,3 +1,4 @@
+import React from "react";
 import TemporaryHome from "./pages/temporary/TemporaryHome";
 
 function App() {
