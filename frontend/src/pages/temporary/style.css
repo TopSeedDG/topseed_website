@@ -28,10 +28,11 @@ a:visited {
 }
 
 html {
-    font-size: min(calc(11px + 0.6vw), 16px);
+    font-size: min(calc(12px + 0.6vw), 16px);
     font-family: 'Nunito', sans-serif;
 }
 body {
+    overflow-x: hidden;
     color: var(--black-100);
     overflow-x: hidden;
 }
@@ -77,7 +78,7 @@ section > .wrapper {
 }
 
 .email-prompt {
-    width: 80%;
+    width: max(80%, calc(100% - 3vw));
 }
 .email-prompt .message {
     margin-bottom: 0.8em;
