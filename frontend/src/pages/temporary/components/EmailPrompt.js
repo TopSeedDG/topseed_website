@@ -113,9 +113,6 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
                 }, 2000);
                 break
         }
-        
-        
-
 
 
     }, [status, MCMessage])
