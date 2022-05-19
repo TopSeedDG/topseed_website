@@ -32,6 +32,7 @@ html {
     font-family: 'Nunito', sans-serif;
 }
 body {
+    display: none;
     overflow-x: hidden;
     color: var(--black-100);
     overflow-x: hidden;
