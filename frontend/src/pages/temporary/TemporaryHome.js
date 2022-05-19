@@ -64,7 +64,7 @@ const TemporaryHome = () => {
                 <img className='TS-logo' src={TSLogoRoseGold} alt="" />
                 <p>Copyright © TopSeed Inc.</p>
 
-                {/* <p>Sign up now and be the first to hear from us when we launch!</p> */}
+                <p>Sign up now and be the first to hear from us when we launch!</p>
             </div>
 
 
