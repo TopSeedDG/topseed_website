@@ -1,6 +1,6 @@
 import React from 'react'
 import MailchimpSubscribe from "react-mailchimp-subscribe"
-import EmailPrompt from './EmailPrompt'
+import EmailTeaser from './EmailTeaser'
 
 export const MCSubscribe = () => {
 
@@ -10,7 +10,7 @@ export const MCSubscribe = () => {
            <MailchimpSubscribe
                 url={url}
                 render={({ subscribe, status, message }) => (
-                    <EmailPrompt
+                    <EmailTeaser
                         status={status} 
                         message={message}
                         onValidated={formData => subscribe(formData)}

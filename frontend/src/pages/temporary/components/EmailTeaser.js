@@ -8,7 +8,7 @@ const duplicateMessage = 'This email address is already in our system'
 const defaultBtnText = 'Keep me posted'
 
 
-const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
+const EmailTeaser = ({ status, message: MCMessage, onValidated}) => {
 
     const [message, setMessage] = useState(defaultMessge)
     const [submitFailed, setFailure] = useState(false)
@@ -155,4 +155,4 @@ const EmailPrompt = ({ status, message: MCMessage, onValidated}) => {
     );
 };
 
-export default EmailPrompt;
+export default EmailTeaser;
