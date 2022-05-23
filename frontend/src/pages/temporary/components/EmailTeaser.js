@@ -93,20 +93,24 @@ const EmailTeaser = ({ status, message: MCMessage, onValidated}) => {
 
         switch (true) {
             case status === 'error' && MCMessage.includes('many'):
+                console.log('useEffect duplicate')
                 setMessage(duplicateMessage)
                 handleSuccess()
                 // console.log('duplicate')
                 break
             case status === 'error':
+                console.log('useEffect error')
                 setErrorMessage(errorString)
                 handleError()
                 break;
 
-            case status === 'sucess':
+            case status === 'success':
+                console.log('useEffect success')
                 setMessage(successMessage)
                 handleSuccess()
                 break
             case status === 'sending':
+                console.log('useEffect sending')
                 setButtonText('sending...')
                 setTimeout(() => {
                     handleTimeOut()

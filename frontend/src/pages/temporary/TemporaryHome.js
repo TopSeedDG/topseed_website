@@ -2,9 +2,6 @@ import React from 'react'
 import './style.css'
 
 
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
-
-
 import BGImg from './assets/bg-img.svg'
 import TSLogoDreamy from './assets/dreamy-logo.svg' 
 import TSLogoRoseGold from './assets/rosegold-logo.svg' 
