@@ -2,7 +2,6 @@ import React from 'react'
 import './style.css'
 
 
-import EmailPrompt from './components/EmailPrompt'
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 
