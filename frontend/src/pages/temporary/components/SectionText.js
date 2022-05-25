@@ -7,7 +7,7 @@ function SectionText({ icon, title, pText, subtitle, width, centered}) {
         <Icon src={icon} />
         <h2>{title}</h2>
         {subtitle === undefined? null : <Subtitle>{subtitle}</Subtitle>}
-        <p>{pText}</p>
+        <LargeP>{pText}</LargeP>
     </Wrapper>
   )
 }
@@ -31,6 +31,9 @@ const Icon = styled.img`
 const Subtitle = styled.h6`
     color: var(--heather-400);
     margin-top: -0.5em;
+`
+const LargeP = styled.p`
+    font-size: 1.1em;
 `
 
 export default SectionText

@@ -23,7 +23,7 @@
 html {
     background-color: #FCFCFC;
     overflow-x: hidden;
-    font-size: min(calc(12px + 0.4vw), 18px);
+    font-size: min(calc(12px + 0.4vw), 16px);
     font-family: 'Nunito', sans-serif;
 }
 

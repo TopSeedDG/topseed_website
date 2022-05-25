@@ -38,7 +38,6 @@ const Footer = styled.footer`
     place-content: center;
     padding: 15vh 0;
     width: 100%;
-    font-size: 0.9em;
     background-image: linear-gradient(to right, #263554, #5D455E)
 `
 
@@ -62,6 +61,8 @@ const About = styled.div`
     }
 
     p {
+        font-weight: 300;
+        font-size: 1em;
         margin-top: 1em;
         color: var(--grey-200);
     }
@@ -79,6 +80,8 @@ const Contact = styled.div`
     p {
         text-align: right;
         font-weight: 300;
+        font-size: 0.9em;
+        line-height: 1.6;
     }
 `
 const SocialIcons = styled.div`
