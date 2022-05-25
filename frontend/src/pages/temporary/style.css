@@ -3,9 +3,11 @@
 :root {
     --black-100: #3F3F3F;
     --grey-400: #9C9C9C;
+    --grey-500: #606060;
     --grey-200: #CFCFCF;
     --steelblue: #525174;
     --heather-100: #9F91B6;
+    --heather-400: #8F6889;
     --heather-500: #885A98;
     --rose-gold: linear-gradient(to right, #FF9090, #FF5793);
     --shadow-300: 0 2px 20px rgba(0, 0, 0, 0.15); 
@@ -21,7 +23,7 @@
 html {
     background-color: #FCFCFC;
     overflow-x: hidden;
-    font-size: min(calc(12px + 0.6vw), 16px);
+    font-size: min(calc(12px + 0.4vw), 18px);
     font-family: 'Nunito', sans-serif;
 }
 
@@ -47,13 +49,18 @@ h1 {
     /* width: min(80%, 400px); */
 }
 h2 {
-    font-size: 2.2em;
+    font-size: 2em;
     font-weight: 800;
 }
 h4 {
     font-size: 1.2em;
     font-weight: 700;
 }
+h6 {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
 section {
     width: 100%;
     display: flex;

@@ -14,6 +14,7 @@ import { SectionOne } from './components/SectionOne'
 import { SectionTwo } from './components/SectionTwo'
 import { SectionThree } from './components/SectionThreee'
 import { TempFooter } from './components/TempFooter'
+import { SectionFour } from './components/SectionFour'
 
 
 
@@ -40,6 +41,7 @@ const TemporaryHome = () => {
         <SectionOne></SectionOne>
         <SectionTwo></SectionTwo>
         <SectionThree></SectionThree>
+        <SectionFour></SectionFour>
         <TempFooter></TempFooter>
         
 

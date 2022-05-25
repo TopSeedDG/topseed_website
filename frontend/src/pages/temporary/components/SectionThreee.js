@@ -24,10 +24,10 @@ export const SectionThree = () => {
 
 
 const Section = styled.section`
-    padding: 15vh 0;
+    padding: 20vh 0;
     position: relative;
     justify-content: start;
-    background-image: linear-gradient(to bottom, #ECF0F6, #FFFFFF)
+    background-image: linear-gradient(to bottom, #ECF0F6, #FFFFFF);
 `
 
 
@@ -35,7 +35,7 @@ const Flex = styled.div`
     display: flex;
     /* width: 70%; */
     gap: 16em;
-    align-items: center
+    align-items: center;
 `
 const Illustration = styled.img`
     /* transform: translate(-20%,0); */

@@ -24,7 +24,7 @@ export const TempFooter = () => {
                 <p>
                     info@topseed.co <br/>
                     (123) 456 - 7890 <br/>
-                    Copyright © ACG Inc. <br/>
+                    Copyright © ACE DG Inc. <br/>
                 </p>
             </Contact>
         </Flex>
@@ -38,6 +38,8 @@ const Footer = styled.footer`
     place-content: center;
     padding: 15vh 0;
     width: 100%;
+    font-size: 0.9em;
+    background-image: linear-gradient(to right, #263554, #5D455E)
 `
 
 const Flex = styled.div`
@@ -61,6 +63,7 @@ const About = styled.div`
 
     p {
         margin-top: 1em;
+        color: var(--grey-200);
     }
 
 
@@ -75,13 +78,13 @@ const Contact = styled.div`
     
     p {
         text-align: right;
-        color: var(--grey-200);
+        font-weight: 300;
     }
 `
 const SocialIcons = styled.div`
     display: flex;
     height: 4em;
-    gap: 1em;
+    gap: 0.8em;
 
     img {
         height: 80%;
