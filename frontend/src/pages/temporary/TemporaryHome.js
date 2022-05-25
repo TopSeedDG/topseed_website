@@ -2,12 +2,18 @@ import React from 'react'
 import './style.css'
 
 
-import BGImg from './assets/bg-img.svg'
+import heroImg from './assets/hero-img.svg'
 import TSLogoDreamy from './assets/dreamy-logo.svg' 
 import TSLogoRoseGold from './assets/rosegold-logo.svg' 
 import ticaLogo from './assets/tica-logo.png'
 import CFALogo from './assets/cfa-logo.png'
+
+
 import { MCSubscribe } from './components/MCSubscribe'
+import { SectionOne } from './components/SectionOne'
+import { SectionTwo } from './components/SectionTwo'
+import { SectionThree } from './components/SectionThreee'
+import { TempFooter } from './components/TempFooter'
 
 
 
@@ -26,14 +32,18 @@ const TemporaryHome = () => {
                 {/* <EmailPrompt></EmailPrompt> */}
                 <MCSubscribe></MCSubscribe>
 
-                <img className='hero-bg-img' src={BGImg} alt="" />
+                <img className='hero-bg-img' src={heroImg} alt="" />
             </div>
 
 
         </section>
+        <SectionOne></SectionOne>
+        <SectionTwo></SectionTwo>
+        <SectionThree></SectionThree>
+        <TempFooter></TempFooter>
+        
 
-
-        <section className='intro'>
+        {/* <section className='intro'>
 
             <div className="wrapper">
                 <h4>Join us in supporting responsible breeding</h4>
@@ -64,7 +74,7 @@ const TemporaryHome = () => {
             </div>
 
 
-        </section>
+        </section> */}
     </>
 
   )

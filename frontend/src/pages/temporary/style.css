@@ -19,6 +19,7 @@
     box-sizing: border-box;
 }
 html {
+    background-color: #FCFCFC;
     overflow-x: hidden;
     font-size: min(calc(12px + 0.6vw), 16px);
     font-family: 'Nunito', sans-serif;
@@ -45,21 +46,26 @@ h1 {
     line-height: 1.1;
     /* width: min(80%, 400px); */
 }
+h2 {
+    font-size: 2.2em;
+    font-weight: 800;
+}
 h4 {
     font-size: 1.2em;
     font-weight: 700;
 }
-
 section {
     width: 100%;
     display: flex;
     place-content: center;
-    padding: 5em 5vw 0 5vw;
-    overflow-x: clip;
-    /* overflow */
+    /* place-items: center; */
 }
 .hero {
     background-image: linear-gradient(to right, #BCCAE7, #FFD7EF);
+    width: 100%;
+    display: flex;
+    padding: 5em 5vw 0 5vw;
+    overflow-x: clip;
 }
 section > .wrapper {
     width: min(30em, 100%);
@@ -181,7 +187,7 @@ input[type="text"]:focus {
     gap: 2em;
     /* width: 100%; */
 }
-.logo-wrapper {
+/* .logo-wrapper {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
@@ -200,7 +206,7 @@ input[type="text"]:focus {
 }
 .logo-wrapper p {
     font-weight: 700;
-}
+} */
 
 .divider {
     width: 100%;
