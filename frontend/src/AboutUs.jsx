@@ -58,7 +58,7 @@ const Articile = styled.article`
 `;
 
 const Text = styled.article`
-	// text-indent: 36px;
+	text-indent: 36px;
 	display: flex;
 	color: var(--grey-200);
 	font-size: 18px !important;
