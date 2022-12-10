@@ -2,19 +2,16 @@ import React from 'react'
 import './style.css'
 
 
+import TSLogoDreamy from './assets/dreamy-logo.svg'
 import heroImg from './assets/hero-img.svg'
-import TSLogoDreamy from './assets/dreamy-logo.svg' 
-import TSLogoRoseGold from './assets/rosegold-logo.svg' 
-import ticaLogo from './assets/tica-logo.png'
-import CFALogo from './assets/cfa-logo.png'
 
 
 import { MCSubscribe } from './components/MCSubscribe'
-import { SectionOne } from './components/SectionOne'
-import { SectionTwo } from './components/SectionTwo'
-import { SectionThree } from './components/SectionThreee'
-import { TempFooter } from './components/TempFooter'
 import { SectionFour } from './components/SectionFour'
+import { SectionOne } from './components/SectionOne'
+import { SectionThree } from './components/SectionThreee'
+import { SectionTwo } from './components/SectionTwo'
+import { TempFooter } from './components/TempFooter'
 
 
 

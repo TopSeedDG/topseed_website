@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import { Link } from "react-router-dom";
+import styled from 'styled-components';
 
-
-import TSLogoHor from '../assets/TSlogo-hor.svg'
-import instagram from '../assets/instagram.svg'
-import facebook from '../assets/facebook.svg'
-import twitter from '../assets/twitter.svg'
+import facebook from '../assets/facebook.svg';
+import instagram from '../assets/instagram.svg';
+import TSLogoHor from '../assets/TSlogo-hor.svg';
+import twitter from '../assets/twitter.svg';
 
 export const TempFooter = () => {
   return (
@@ -14,7 +14,9 @@ export const TempFooter = () => {
             <About>
                 <img src={TSLogoHor} alt="" />
                 <p>We are a group friends with diverse backgrouds from business to technology to design, bounded together by our shared love for pets.</p>
-            </About>
+				<br/>
+				<Link to={`/about-us`}><p><strong>About Us</strong></p></Link>
+			</About>
             <Contact>
                 <SocialIcons>
                     <img src={instagram} alt="" />
@@ -22,9 +24,9 @@ export const TempFooter = () => {
                     <img src={twitter} alt="" />
                 </SocialIcons>
                 <p>
-                    info@topseed.co <br/>
-                    (123) 456 - 7890 <br/>
-                    Copyright © ACE DG Inc. <br/>
+				info@topseed.co <br/>
+                (213) 999 - 3485 <br/>
+                Copyright © ACE DG Inc. <br/>
                 </p>
             </Contact>
         </Flex>
@@ -88,11 +90,7 @@ const SocialIcons = styled.div`
     display: flex;
     height: 4em;
     gap: 0.8em;
-
     img {
         height: 80%;
     }
-
-
-
 `
