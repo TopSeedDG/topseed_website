@@ -12,7 +12,7 @@ export const TempFooter = () => {
     <Footer>
         <Flex>
             <About>
-                <img src={TSLogoHor} alt="" />
+			    <Link to={`/`}><img src={TSLogoHor} alt="" /></Link>
                 <p>We are a group friends with diverse backgrouds from business to technology to design, bounded together by our shared love for pets.</p>
 				<br/>
 				<Link to={`/about-us`}><p><strong>About Us</strong></p></Link>
@@ -26,6 +26,8 @@ export const TempFooter = () => {
                 <p>
 				info@topseed.co <br/>
                 (213) 999 - 3485 <br/>
+				770 S Grand Ave <br/>
+				Los Angeles, CA 90017 <br/>
                 Copyright © ACE DG Inc. <br/>
                 </p>
             </Contact>
@@ -33,7 +35,6 @@ export const TempFooter = () => {
     </Footer>
   )
 }
-
 
 const Footer = styled.footer`
     display: flex;
