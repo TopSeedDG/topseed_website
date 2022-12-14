@@ -26,9 +26,8 @@ export const TempFooter = () => {
                 <p>
 				info@topseed.co <br/>
                 213-999-3485 <br/>
-				770 S Grand Ave <br/>
+				355 S. Grand Ave. Suite 2450 <br/>
 				Los Angeles, CA 90017 <br/>
-                Copyright © ACE DG Inc. <br/>
                 </p>
             </Contact>
         </Flex>
