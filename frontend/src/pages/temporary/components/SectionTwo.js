@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import SectionText from './SectionText'
-import { LogoLink } from './LogoLink'
-
 import bgMountains from '../assets/bg-mountains.svg'
-import certificate from '../assets/certificate.svg'
+import cats from '../assets/cats.png'
 import certifiedIcon from '../assets/certified-icon.svg'
 import ticaLogo from '../assets/tica-logo.png'
+import { LogoLink } from './LogoLink'
+import SectionText from './SectionText'
 
 
 
@@ -32,7 +31,7 @@ export const SectionTwo = () => {
             </div>
 
 
-            <Illustration src={certificate} alt="" />
+            <Illustration src={cats} alt="" />
         </Flex>
 
     </Section>
@@ -61,9 +60,9 @@ const Flex = styled.div`
     align-items: center;
 `
 const Illustration = styled.img`
-    width: 35vw;
+    width: 40vw;
     position: absolute;
-    right: -5%;
+    right: -0%;
 `
 const LogoWrapper = styled.div`
     display: flex;

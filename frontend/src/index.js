@@ -1,8 +1,11 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AboutUs from "./AboutUs";
 import App from "./App";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import ScrollToTop from './pages/temporary/utils/ScrollToTop';
 
 const router = createBrowserRouter([
 	{
@@ -11,7 +14,11 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/about-us",
-		element: <AboutUs />,
+		element: <><ScrollToTop/><AboutUs /></>,
+	},
+	{
+		path: "/contact-us",
+		element: <><ScrollToTop/><ContactUs /></>,
 	},
 ]);
 

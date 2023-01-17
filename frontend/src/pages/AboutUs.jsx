@@ -1,24 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import CoupleCat from './pages/temporary/assets/couple-cat.svg';
-import TSLogoHor from "./pages/temporary/assets/TSlogo-hor.svg";
-import { TempFooter } from './pages/temporary/components/TempFooter';
+import CoupleCat from './temporary/assets/couple-cat.svg';
+import { TempFooter } from './temporary/components/TempFooter';
 
 function AboutUs() {
 	return (
 		<Container>
 			<div style={{ height: 96 }} />
-			<Row>
+			{/* <Row>
 				<Link to="/">
 					<img style={{ height: "3em" }} src={TSLogoHor} alt="" />
 				</Link>
 			</Row>
-			<div style={{ height: 36 }} />
+			<div style={{ height: 36 }} /> */}
 			<Row>
 				<img style={{ height: "12em" }} src={CoupleCat} alt="" />
 			</Row>
 			<div style={{ height: 36 }} />
+			<Row>
+				<Title>About Us</Title>
+			</Row>
+			<div style={{ height: 24 }} />
 			<Row>
 				<Articile>
 					{/* <Text>We are a group friends with diverse backgrouds from business to technology to design, bounded together by our shared love for pets.</Text>
@@ -41,6 +43,10 @@ function AboutUs() {
 }
 
 export default AboutUs;
+
+const Title = styled.h3`
+	color: var(--grey-200);
+`
 
 const Container = styled.div`
 	// height: 100vh;
