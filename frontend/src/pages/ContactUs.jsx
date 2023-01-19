@@ -1,44 +1,26 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-
+import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import styled from "styled-components";
 import CoupleCat from "./temporary/assets/couple-cat.svg";
 import { TempFooter } from "./temporary/components/TempFooter";
 
 function ContactUs() {
 	const [isSubmitted, setIsSubmitted] = useState(false);
-
+	const form = useRef();
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setIsSubmitted(true)
-	}
-
-	const ContactUsForm = () => {
-		if (isSubmitted) return null;
-		return (
-			<Form style={{ width: 420 }} onSubmit={handleSubmit}>
-				<Form.Group className="mb-3">
-					<Form.Control type="name" placeholder="Your name" />
-				</Form.Group>
-				<Form.Group className="mb-3">
-					<Form.Control type="email" placeholder="Email address" />
-				</Form.Group>
-				<Form.Group className="mb-3">
-					<Form.Control as="textarea" rows={3} placeholder="Message" />
-				</Form.Group>
-				<Button variant="dark" type="submit">
-					Send
-				</Button>
-			</Form>
-		);
+		emailjs
+			.sendForm("service_f47jxjf", "template_f13te1y", form.current, "IS0vo1u-FpkbW3Q4z")
+			.then(() => console.log("message sent"), (err) => console.log(err))
+			.catch((err) => console.log(err))
+			.finally(() => setIsSubmitted(true));
 	};
 
 	const ThankyouForMessage = () => {
-		if (!isSubmitted) return null
-		return (
-			<Label>Thanks for contacting us! We will be in touch with your shortly.</Label>
-		)
-	}
+		if (!isSubmitted) return null;
+		return <Label style={{height: 250}}>Thanks for contacting us! We will be in touch with your shortly.</Label>;
+	};
 
 	return (
 		<Container>
@@ -52,8 +34,23 @@ function ContactUs() {
 			</Row>
 			<div style={{ height: 24 }} />
 			<Row>
-				<ContactUsForm/>
-				<ThankyouForMessage/>
+				{!isSubmitted && (
+					<Form ref={form} style={{ width: 420 }} onSubmit={handleSubmit}>
+						<Form.Group className="mb-3">
+							<Form.Control type="name" name="name" placeholder="Your name" required/>
+						</Form.Group>
+						<Form.Group className="mb-3">
+							<Form.Control type="email" name="email" placeholder="Email address" required/>
+						</Form.Group>
+						<Form.Group className="mb-3">
+							<Form.Control as="textarea" rows={3} name="message" placeholder="Message" required />
+						</Form.Group>
+						<Button variant="dark" type="submit">
+							Send
+						</Button>
+					</Form>
+				)}
+				<ThankyouForMessage />
 			</Row>
 			<TempFooter></TempFooter>
 		</Container>
@@ -74,13 +71,6 @@ const Container = styled.div`
 const Row = styled.section`
 	display: flex;
 	flex-direction: row;
-`;
-
-const Text = styled.article`
-	text-indent: 36px;
-	display: flex;
-	color: var(--grey-200);
-	font-size: 18px !important;
 `;
 
 const Label = styled.article`
