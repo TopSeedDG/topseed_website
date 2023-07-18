@@ -245,7 +245,7 @@ function BreederInformationCollection() {
 						<Form.Label>
 							<Label>Do you offer any support or assistance to kitten buyers after they take their kittens home? If yes, please provide details.</Label>
 						</Form.Label>
-						<Form.Control as="textarea" rows={3} name="anySuuportOrAssistanceToBuyer" placeholder="" required={false} onChange={handleOnChange}/>
+						<Form.Control as="textarea" rows={3} name="anySuportOrAssistanceToBuyer" placeholder="" required={false} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
