@@ -80,13 +80,21 @@ function BreederInformationCollection() {
 						</Form.Label>
 						<Form.Control name="catteryName" placeholder="Cattery name" required={false} value={data["catteryName"]} onChange={handleOnChange} />
 					</Form.Group>
-					<Form.Group className="flex mb-3">
+					<Form.Group className="mb-3">
 						<Form.Label>
 							<Label>Cattery owner's name</Label>
 						</Form.Label>
 						<Form.Control style={{ marginBottom: 12 }} name="catteryOwnerName1" placeholder="Owner's name 1" required={false} onChange={handleOnChange}/>
 						<Form.Control style={{ marginBottom: 12 }} name="catteryOwnerName2" placeholder="Owner's name 2 (Optional)" onChange={handleOnChange}/>
 						<Form.Control style={{ marginBottom: 12 }} name="catteryOwnerName3" placeholder="Owner's name 3 (Optional)" onChange={handleOnChange}/>
+					</Form.Group>
+					<Form.Group className="mb-3">
+						<Form.Label>
+							<Label>Cattery address</Label>
+						</Form.Label>
+						<Form.Control style={{ marginBottom: 12 }} name="catteryAddress1" placeholder="Cattery's address 1" required={false} onChange={handleOnChange}/>
+						<Form.Control style={{ marginBottom: 12 }} name="catteryAddress2" placeholder="Cattery's address 2 (Optional)" onChange={handleOnChange}/>
+						<Form.Control style={{ marginBottom: 12 }} name="catteryAddress3" placeholder="Cattery's address 3 (Optional)" onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
