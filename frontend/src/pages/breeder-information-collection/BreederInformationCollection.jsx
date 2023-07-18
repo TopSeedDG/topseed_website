@@ -251,7 +251,7 @@ function BreederInformationCollection() {
 						<Form.Label>
 							<Label>How many breeding cats do you currently own?</Label>
 						</Form.Label>
-						<Form.Control name="buyersreedingCatsCurrentlyOwn" placeholder="" required={false} onChange={handleOnChange}/>
+						<Form.Control name="breedingCatsCurrentlyOwn" placeholder="" required={false} onChange={handleOnChange}/>
 					</Form.Group>
 
 					<hr/>
