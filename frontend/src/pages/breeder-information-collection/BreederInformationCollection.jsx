@@ -21,7 +21,7 @@ function BreederInformationCollection() {
 			}
 		})
 		.then(res => {
-			console.log(res);
+			console.log(res.data);
 			navigate("/breeder-information-collection-submitted")
 		}).catch(e => console.log(e))
 	};
