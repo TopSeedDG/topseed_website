@@ -20,7 +20,6 @@ function BreederInformationCollection() {
 			console.log(res);
 			navigate("/breeder-information-collection-submitted")
 		}).catch(e => console.log(e))
-		navigate("/breeder-information-collection-submitted")
 	};
 	
 	const handleOnChange = (e) => {
