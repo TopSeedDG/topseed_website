@@ -15,9 +15,14 @@ function BreederInformationCollection() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(data);
+		axios.post("http://topseed-django-development.up.railway.app/api/breeder-info-collection/", data)
+		.then(res => {
+			console.log(res);
+			navigate("/breeder-information-collection-submitted")
+		}).catch(e => console.log(e))
 		navigate("/breeder-information-collection-submitted")
 	};
-
+	
 	const handleOnChange = (e) => {
 		setData(values => {
 			values[e.target.name] = e.target.value
@@ -34,6 +39,7 @@ function BreederInformationCollection() {
 			  'Content-Type': 'multipart/form-data'
 			}
 		}).then(res => {
+			console.log(res.data)
 			setData(values => {
 				values["catteryRegistrationFileUri"] = res.data
 				return values;
@@ -53,6 +59,7 @@ function BreederInformationCollection() {
 			}).then(res => res.data).catch(e => console.log(e)) 
 		})
 		Promise.all(fileUploads).then(fileUris => {
+			console.log(fileUris)
 			setData(values => {
 				values["siresAndDamsRegistrationFileUris"] = fileUris
 				return values;
