@@ -15,7 +15,11 @@ function BreederInformationCollection() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(data);
-		axios.post("https://topseed-django-development.up.railway.app/api/breeder-info-collection", data)
+		axios.post("https://topseed-django-development.up.railway.app/api/breeder-info-collection", data, {
+			headers: {
+			  'Access-Control-Allow-Origin': '*'
+			}
+		})
 		.then(res => {
 			console.log(res);
 			navigate("/breeder-information-collection-submitted")
