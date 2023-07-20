@@ -19,7 +19,10 @@ function BreederInformationCollection() {
 		.then(res => {
 			console.log(res.data);
 			navigate("/breeder-information-collection-submitted")
-		}).catch(e => console.log(e))
+		}).catch(e => {
+			console.log(e)
+			console.log(e.response.data)
+		})
 	};
 	
 	const handleOnChange = (e) => {
