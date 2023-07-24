@@ -254,7 +254,7 @@ function BreederInformationCollection() {
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>Do you have a contract or agreement for buyers? If yes, please provide a brief description of the terms and conditions.</Label>
+							<Label>Do you have a contract or agreement for buyers? If yes, please provide a brief description of the terms and conditions. (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="contactOrAgreementForBuyers" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
