@@ -176,79 +176,79 @@ function BreederInformationCollection() {
 					<div style={{ width: 420 }}><SectionTitle>Cattery Management</SectionTitle></div>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>How many litters of kittens do you breed each year?</Label>
+							<Label>How many litters of kittens do you breed each year? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control name="littersOfKittensBreedEachYear" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>What is the typical price range of kittens?</Label>
+							<Label>What is the typical price range of kittens? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control name="typicalPriceRangeOfKittens" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>How long have you been involved in breeding?</Label>
+							<Label>How long have you been involved in breeding? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control name="howLongBeenInvolvedInBreeding" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>How many kittens have you successfully placed in new homes? (per year?)</Label>
+							<Label>How many kittens have you successfully placed in new homes? (per year?) (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control name="kittensSuccessfullyPlacedInNewHomesPerYear" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>Have you ever been Scammed? And what kind of scam?</Label>
+							<Label>Have you ever been Scammed? And what kind of scam? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="haveEverBeenScammed" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>Have you ever engaged in a dispute with a purchaser regarding the well-being of a kitten?</Label>
+							<Label>Have you ever engaged in a dispute with a purchaser regarding the well-being of a kitten? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="haveEverEngagedInADispute" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>What has been the most challenging experience you have faced to manage the cattery?</Label>
+							<Label>What has been the most challenging experience you have faced to manage the cattery? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="mostChallengingExperienceToManageTheCattery" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>What is the most important data you would like to collect from your customers?</Label>
+							<Label>What is the most important data you would like to collect from your customers? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="mostImportantDataWouldLiketCollectFromCustomer" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>What is the most important thing you would like your customers to know?</Label>
+							<Label>What is the most important thing you would like your customers to know? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="mostImportantThingWouldLIkeCustomersToKnow" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>What type of data would assist you in improving the management of the cattery?</Label>
+							<Label>What type of data would assist you in improving the management of the cattery? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="typeOfDataWouldImprovingTheManagementOfTheCattery" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>List all the websites/apps you used to post your kittens (separate by comma)</Label>
+							<Label>List all the websites/apps you used to post your kittens (separate by comma) (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="websitesAppsUsedToPostKittens" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>Have any of your breeding cats or their offspring received titles or awards? If yes, please provide details.</Label>
+							<Label>Have any of your breeding cats or their offspring received titles or awards? If yes, please provide details. (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="haveCatsReceivedTitlesOrAwards" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>What health testing do you conduct on your breeding cats? Please specify the tests performed and any certifications obtained.</Label>
+							<Label>What health testing do you conduct on your breeding cats? Please specify the tests performed and any certifications obtained. (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="healthTestingConductOnCats" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
@@ -260,13 +260,13 @@ function BreederInformationCollection() {
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>Do you offer any support or assistance to kitten buyers after they take their kittens home? If yes, please provide details.</Label>
+							<Label>Do you offer any support or assistance to kitten buyers after they take their kittens home? If yes, please provide details. (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control as="textarea" rows={3} name="anySuportOrAssistanceToBuyer" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>How many breeding cats do you currently own?</Label>
+							<Label>How many breeding cats do you currently own? (please put N/A if the question doesn't apply to you.)</Label>
 						</Form.Label>
 						<Form.Control name="breedingCatsCurrentlyOwn" placeholder="" required={true} onChange={handleOnChange}/>
 					</Form.Group>
