@@ -226,3 +226,15 @@ input[type="text"]:focus {
 .intro .TS-logo {
     height: 8em;
 }
+
+input[type="checkbox"] {
+	padding: 0em !important;
+}
+
+input[type="radio"] {
+	padding: 0em !important;
+}
+
+label {
+	color: var(--grey-200);
+}
