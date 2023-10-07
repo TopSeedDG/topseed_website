@@ -141,7 +141,7 @@ function BreederInformationCollection() {
 			data['anySuportOrAssistanceToBuyer'] = anySuportOrAssistanceToBuyerData;
 		}
 
-		data['contactOrAgreementForBuyers'] = data['contactOrAgreementForBuyers'].join(",");
+		data['contactOrAgreementForBuyers'] = data['contactOrAgreementForBuyers'].join(",") || "";
 		console.log(data)
 
 		axios
@@ -476,7 +476,7 @@ function BreederInformationCollection() {
 					
 					<Form.Group className="mb-3">
 						<Form.Label>
-							<Label>What health testing do you conduct on your breeding cats? Please specify the tests performed and any certifications obtained. (please put N/A if the question doesn't apply to you.)</Label>
+							<Label>What health testing do you conduct on your breeding cats? Please specify the tests performed and any certifications obtained.</Label>
 						</Form.Label>
 
 						<Form.Check type="checkbox" id={`healthTestingConductOnCats-bloodTest`} label={`Blood Test`}  checked={healthTestingConductOnCats["bloodTest"]} onChange={() => setHealthTestingConductOnCats(state => ({...state, "bloodTest": !state["bloodTest"] }))} />
