@@ -141,7 +141,9 @@ function BreederInformationCollection() {
 			data['anySuportOrAssistanceToBuyer'] = anySuportOrAssistanceToBuyerData;
 		}
 
-		data['contactOrAgreementForBuyers'] = data['contactOrAgreementForBuyers'].join(",") || "";
+		if (data['contactOrAgreementForBuyers']) {
+			data['contactOrAgreementForBuyers'] = data['contactOrAgreementForBuyers'].join(",")
+		}
 		console.log(data)
 
 		axios
